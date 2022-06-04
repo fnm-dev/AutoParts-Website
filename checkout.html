@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RacingParts - Checkout</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://kit.fontawesome.com/5b8211afd0.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mohave:ital@1&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <!--Barra do Menu-->
+        <nav>
+            <a class="logo" href="index.html">Racing Parts</a>
+            <div class="mobile-menu"> 
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div> 
+            <ul class="nav-list">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav> 
+    </header>
+    <div class="content">
+        <div id="resumo-checkout">
+            <center>
+            <h1 class="h1-checkout">RESUMO DO PEDIDO</h1>
+            <div id="carrinho-vazio">
+                <img src="./img/carrinho-vazio.jpg"/>
+                <div class="container">
+                    <a href="produtos.html" class="products-link">PRODUTOS</a>
+                </div>
+            </div>
+            </center>
+        </div>
+        <div id="valor-checkout"></div>
+        <div class="pagamento" id="pagamento">
+            <center>
+            <form class="dados">
+                <h1>DADOS DE ENTREGA E PAGAMENTO</h1>
+                <div class="entrega">
+                    <br><h4>Selecione a transportadora:</h4><br>
+                    <br><input class="radio" type="radio" id="Fedex" name="Transportadora">
+                    <i class="fab fa-fedex"></i><label for="Fedex"> Fedex</label>
+                    <input class="radio" type="radio" id="UPS" name="Transportadora">
+                    <i class="fab fa-ups"></i><label for="UPS"> UPS</label>
+                    <input class="radio" type="radio" id="DHL" name="Transportadora">
+                    <i class="fab fa-dhl"></i><label for="DHL"> DHL</label><br>
+                    <br><h4><i class="fas fa-map-marked-alt" id="icon-endereco"></i> Endereço:</h4>
+                    <input type="text" placeholder="Rua" id="Rua" name="Rua" required><br>
+                    <input type="text" placeholder="Número" id="Numero" name="Numero" required><br>
+                    <input type="text" placeholder="Complemento" id="Complemento" name="Complemento"><br>
+                    <input type="text" placeholder="Bairro" id="Bairro" name="Bairro" required><br>
+                    <input type="text" placeholder="Cidade" id="Cidade" name="Cidade" required><br>
+                    <select name="Estado" required>
+                        <option value="">Selecione um estado:</option>
+                        <option value="Acre">Acre</option>
+                        <option value="Alagoas">Alagoas</option>
+                        <option value="Amapá">Amapá</option>
+                        <option value="Amazonas">Amazonas</option>
+                        <option value="Bahia">Bahia</option>
+                        <option value="Ceará">Ceará</option>
+                        <option value="Distrito Federal">Distrito Federal</option>
+                        <option value="Espírito Santo">Espírito Santo</option>
+                        <option value="Goiás">Goiás</option>
+                        <option value="Maranhão">Maranhão</option>
+                        <option value="Mato Grosso">Mato Grosso</option>
+                        <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
+                        <option value="Minas Gerais">Minas Gerais</option>
+                        <option value="Pará">Pará</option>
+                        <option value="Paraíba">Paraíba</option>
+                        <option value="Paraná">Paraná</option>
+                        <option value="Pernambuco">Pernambuco</option>
+                        <option value="Piauí">Piauí</option>
+                        <option value="Rio de Janeiro">Rio de Janeiro</option>
+                        <option value="Rio Grande do Norte">Rio Grande do Norte</option>
+                        <option value="Rio Grande do Sul">Rio Grande do Sul</option>
+                        <option value="Rondônia">Rondônia</option>
+                        <option value="Roraima">Roraima</option>
+                        <option value="Santa Catarina">Santa Catarina</option>
+                        <option value="São Paulo">São Paulo</option>
+                        <option value="Sergipe">Sergipe</option>
+                        <option value="Tocantins">Tocantins</option>
+                    </select><br><br>
+                </div>    
+                <div class="dados-pagamento">
+                    <br><h4>Selecione o tipo de cartão:</h4>
+                    <br><br><input class="radio" onclick="cartaoPagamento()" type="radio" id="Credito" name="cartao" value="credito" required>
+                    <i class="fas fa-credit-card"></i><label for="Credito"> Crédito</label>
+                    <input class="radio" onclick="cartaoPagamento()" type="radio" id="Debito" name="cartao" value="debito" required>
+                    <i class="far fa-credit-card"></i><label for="Debito"> Débito</label><br>
+                    <br><br><i class="fas fa-money-check-alt"></i> <input type="text" placeholder="Número do cartão" id="Numerodocartao" name="Numerodocartao" minlength="16" maxlength="16" required><br>
+                    <i class="fas fa-signature"></i> <input type="text" placeholder="Nome" id="Nome" name="Nome" required><br>
+                    <i class="fas fa-calendar-alt">&nbsp;</i> <input type="month" min="2021-11" placeholder="Validade" id="Validade" name="Validade" required><br>
+                    <i class="fas fa-credit-card"></i> <input type="text" placeholder="Código de Segurança" id="Codigodesegurança" name="Codigodesegurança" minlength="3" maxlength="3" required><br>
+                    <i class="fas fa-id-card"></i> <input type="text" placeholder="CPF" id="CPF" name="CPF" minlength="11" maxlength="11" required><br>
+                    <div id="cartao"></div>
+                </div>
+                <br><br><button class="btn btn-1 btn-sep icon-info" onclick="efetuarPedido()" type="submit" value="Finalizar Pedido">Finalizar Pedido</button>
+            </form>
+            </center>
+        </div>
+    </div>
+    
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <h3>Racing<span>Parts</span></h3>
+            <p class="footer-links">
+                <a href="index.html" class="link-1">Início</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="checkout.html">Checkout</a>
+            </p>
+            <p class="footer-company-name">RacingParts © 2021</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Rua Rousseau, 191</span> Franco da Rocha, São Paulo</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>(11) 99999-9999</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:sac@racingparts.com">sac@racingparts.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Redes Sociais</span>
+                Nos acompanhe por todas as redes sociais!
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="date" id="date"></div>
+        </div>
+    </footer>
+    <script src="./js/checkout.js"></script>
+    <script src="./js/scripts.js"></script>
+</body>
+</html>
