@@ -1,0 +1,694 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,500,300,700);
+
+/*Barra do Menu*/
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  a:hover {
+    opacity: 0.7;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: url("../img/menu.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 8vh;
+  }
+  
+  body {
+    background: url("../img/bg.jpg") no-repeat center center;
+    background-size: cover;
+    height: 92vh;
+    background-attachment: fixed;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+  }
+  
+  .mobile-menu {
+    display: none;
+    cursor: pointer;
+  }
+  
+  .mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+  }
+  
+  @media (max-width: 999px) {
+    body {
+      overflow-x: hidden;
+    }
+    .nav-list {
+      position: absolute;
+      top: 8vh;
+      right: 0;
+      width: 50vw;
+      height: 170vh;
+      background: black;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+      z-index: 1;
+    }
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+    }
+    .mobile-menu {
+      display: block;
+    }
+  }
+  
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  
+  .mobile-menu.active .line2 {
+    opacity: 0;
+  }
+  
+  .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
+
+  /*Conteúdo*/
+
+  .content {
+    background-color: #fff;
+    background-size: cover;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 10vh;
+    max-width: 80%;
+  }
+
+  .content img{
+    width: 100%;
+  }
+
+  .h1-checkout {
+    font-family: 'Mohave', sans-serif;
+    color: #fff;
+    background: url(../img/menu.jpg);
+    text-align: center;
+  }
+
+  #carrinho-vazio img {
+    margin: 30px;
+    width: 50%;
+  }
+
+  .title {
+    color: darkred;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+  }
+
+  .text {
+    font-family: 'Mohave', sans-serif;
+    font-size: 24px;
+    text-align: justify;
+    margin: 30px;
+  }
+
+  @media (max-width: 724px) {
+    .content {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
+
+    .text{
+      font-size: 16px;
+    }
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+  }
+  
+  .products-link {
+    font-family: "Mohave", sans-serif;
+    font-size: 1.5rem;
+    padding: 1rem 3rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    background-color: darkred;
+    text-decoration: none;
+    border: 1px solid rgb(167, 0, 0);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .products-link:hover {
+    box-shadow: 1px 1px 25px 10px rgba(0, 0, 0, 0.392);
+  }
+  
+  .products-link:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 0, 0, 0.4),
+      transparent
+    );
+    transition: all 650ms;
+  }
+  
+  .products-link:hover:before {
+    left: 100%;
+  }
+
+  /*Produtos*/
+
+  #cart h1,
+  #products h1,
+  #resumo h1{
+    font-family: "Mohave", sans-serif;
+    font-size: 50px;
+    background: url(../img/menu.jpg);
+    color: #fff;
+    text-align: center;
+  }
+
+  .produto-single{
+    font-family: "Mohave", sans-serif;
+    font-size: 24px;
+    color: darkred;
+    text-align: center;
+  }
+
+  .produto-single img{
+    max-width: 75%;
+    margin: 50px;
+  }
+
+  .produto-single p{
+    font-size: 36px;
+    background-color: darkred;
+    color: #fff;
+    text-align: center;
+    height: 45px;
+    width: 200px;
+  }
+
+  .hide {
+    display: none;
+  }
+      
+  .textDescricao:hover + .hide {
+    display: block;
+    color: #fff;
+    background-color: darkred;
+    width: 75%;
+    border-radius: 10px;
+    
+  }
+
+  .carrinho{
+    font-family: "Mohave", sans-serif;
+    font-size: 24px;
+    color: darkred;
+    text-align: center;
+  }
+
+  .carrinho-vazio img{
+    margin: 50px;
+    width: 50%;
+  }
+
+  .resumo{
+    text-align: center;
+  }
+
+  .resumo h2{
+    font-family: "Mohave", sans-serif;
+  }
+
+  .checkout img {
+    width: 20%;
+    align-items: center;
+  }
+
+  .checkout p{
+    font-family: "Mohave", sans-serif;
+    color: darkred;
+  }
+
+  #valor-checkout {
+    margin: 30px;
+    align-items: center;
+    text-align: center;
+  }
+
+  #valor-checkout h2{
+    font-family: "Mohave", sans-serif;
+    color: darkred;
+  }
+
+  .btn {
+    border: none;
+    font-family: 'Mohave';
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    display: inline-block;
+    margin: 5px 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  .btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  /* Pseudo elements for icons */
+  .btn:before {
+    font-family: 'FontAwesome';
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  
+  /* Icon separator */
+  .btn-sep {
+    padding: 25px 60px 25px 120px;
+  }
+  
+  .btn-sep:before {
+    background: rgba(0,0,0,0.15);
+  }
+
+  .btn-2 {
+    background: #2ecc71;
+    color: #fff;
+  }
+  
+  .btn-2:hover {
+    background: #27ae60;
+  }
+  
+  .btn-2:active {
+    background: #27ae60;
+    top: 2px;
+  }
+  
+  .btn-2:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+  }
+
+  .icon-cart:before {
+    display: inline-block;
+    font-family: FontAwesome;
+    float: left;
+    content: "\f07a";
+    font-weight: 400;
+    margin-right: 0.5em;
+  }
+
+  .btn-3 {
+    background: #e74c3c;
+    color: #fff;
+  }
+  
+  .btn-3:hover {
+    background: #c0392b;
+  }
+  
+  .btn-3:active {
+    background: #c0392b;
+    top: 2px;
+  }
+  
+  .btn-3:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+  }
+
+  .icon-heart:before {
+    content: "\f1f8";
+  }
+  
+  /*Checkout*/
+
+  .pagamento h1{
+    font-family: "Mohave", sans-serif;
+    color: #fff;
+    text-align: center;
+    background: url(../img/menu.jpg);
+  }
+
+  .pagamento h4{
+    font-family: 'Roboto';
+    color: darkred;
+  }
+
+  .pagamento input{
+    width: 160px;
+  }
+
+  .pagamento select{
+    width: 164px;
+    color: gray;
+  }
+
+  .pagamento input#Fedex.radio,
+             input#UPS.radio,
+             input#DHL.radio,
+             input#Credito.radio,
+             input#Debito.radio{
+    width: 10px;
+  }
+
+  #icon-endereco{
+    color: black;
+  }
+
+  .entrega{
+    margin: 0;
+    padding: 0;
+    width: 49%;
+    min-width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    border-right: gray solid 1px;
+  }
+  
+  .dados-pagamento{
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    min-width: 250px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+
+  @media (max-width: 999px){
+
+    .entrega,
+    .dados-pagamento{
+      display: block;
+      margin: 0;
+      padding: 0;
+      border-right: none;
+    }
+
+    }
+
+  .btn-1 {
+    background: #3498db;
+    color: #fff;
+  }
+  
+  .btn-1:hover {
+    background: #2980b9;
+  }
+  
+  .btn-1:active {
+    background: #2980b9;
+    top: 2px;
+  }
+  
+  .btn-1:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+  }
+  
+  .icon-info:before {
+    content: "\f14a";
+  } 
+
+
+  /*Rodapé*/
+  
+  .footer-distributed{
+    background:url("../img/menu.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+    margin-top: 100px;
+  }
+  
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+  }
+  
+  .footer-distributed .footer-left{
+    width: 40%;
+  }
+  
+  .footer-distributed h3{
+    color:  #ffffff;
+    font: normal 36px 'Open Sans', cursive;
+    margin: 0;
+  }
+  
+  .footer-distributed h3 span{
+    color:  darkred;
+  }
+  
+  .footer-distributed .footer-links{
+    color:  #ffffff;
+    margin: 20px 0 12px;
+    padding: 0;
+  }
+  
+  .footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    font-weight:400;
+    text-decoration: none;
+    color:  inherit;
+  }
+  
+  .footer-distributed .footer-company-name{
+    color:  #fff;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .footer-distributed .footer-center{
+    width: 35%;
+  }
+  
+  .footer-distributed .footer-center i{
+    background-color:  #33383b;
+    color: #ffffff;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+  
+  .footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+  }
+  
+  .footer-distributed .footer-center p{
+    display: inline-block;
+    color: #ffffff;
+    font-weight:400;
+    vertical-align: middle;
+    margin:0;
+  }
+  
+  .footer-distributed .footer-center p span{
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+  }
+  
+  .footer-distributed .footer-center p a{
+    color:  #fff;
+    text-decoration: none;;
+  }
+  
+  .footer-distributed .footer-links a:before {
+    content: "|";
+    font-weight:300;
+    font-size: 20px;
+    left: 0;
+    color: #fff;
+    display: inline-block;
+    padding-right: 5px;
+  }
+  
+  .footer-distributed .footer-links .link-1:before {
+    content: none;
+  }
+
+  
+  .footer-distributed .footer-right{
+    width: 20%;
+  }
+  
+  .footer-distributed .footer-company-about{
+    line-height: 20px;
+    color:  #92999f;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .footer-distributed .footer-company-about span{
+    display: block;
+    color:  #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .footer-distributed .footer-icons{
+    margin-top: 25px;
+  }
+  
+  .footer-distributed .footer-icons a{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    background-color:  #33383b;
+    border-radius: 2px;
+  
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+  
+    margin-right: 3px;
+    margin-bottom: 5px;
+  }
+
+  .date{
+    font-family: 'Roboto';
+    font-size: 12px;
+    color: #fff;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 880px) {
+  
+    .footer-distributed{
+      font: bold 14px sans-serif;
+    }
+  
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  
+    .footer-distributed .footer-center i{
+      margin-left: 0;
+    }
+  
+  }
+  
+  
