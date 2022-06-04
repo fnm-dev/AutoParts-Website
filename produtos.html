@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang=pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RacingParts - Produtos</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://kit.fontawesome.com/5b8211afd0.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mohave:ital@1&family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!--Barra do Menu-->
+        <nav>
+            <a class="logo" href="index.html">Racing Parts</a>
+            <div class="mobile-menu"> 
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div> 
+            <ul class="nav-list">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <div id="products"></div>
+        <div id="cart"></div>
+        <div id="resumo">
+            <div class="carrinho-vazio">
+                <center>
+                    <img src="./img/carrinho-vazio.jpg"/>
+                </center>
+            </div>
+        </div>
+    </div>
+    <!--Rodapé-->
+    <footer class="footer-distributed">
+        <div class="footer-left">
+            <h3>Racing<span>Parts</span></h3>
+            <p class="footer-links">
+                <a href="index.html" class="link-1">Início</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="checkout.html">Checkout</a>
+            </p>
+            <p class="footer-company-name">RacingParts © 2021</p>
+        </div>
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Rua Rousseau, 191</span> Franco da Rocha, São Paulo</p>
+            </div>
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>(11) 99999-9999</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:sac@racingparts.com">sac@racingparts.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>Redes Sociais</span>
+                Nos acompanhe por todas as redes sociais!
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="date" id="date"></div>
+        </div>
+    </footer>
+    <script src="./js/produtos.js"></script>
+    <script src="./js/scripts.js"></script>
+</body>
+</html>
